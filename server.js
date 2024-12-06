@@ -1,8 +1,11 @@
-// server.js
 const express = require('express');
+const cors = require('cors');  // Importando o pacote cors
 const { Client } = require('pg');
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Configuração do CORS (permite todas as origens)
+app.use(cors()); // Permite todas as origens por padrão
 
 // Configuração de conexão com o banco de dados (Render fornece essas variáveis automaticamente)
 const client = new Client({
